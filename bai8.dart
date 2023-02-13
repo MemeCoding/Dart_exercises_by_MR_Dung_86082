@@ -1,10 +1,13 @@
+import 'dart:convert';
 import 'dart:io';
 
-void Swap(int a, int b) {
-  int tg;
-  tg = a;
-  a = b;
-  b = tg;
+List Swap(int num1, int num2) {
+  int temp;
+
+  temp = num1;
+  num1 = num2;
+  num2 = temp;
+  return [num1, num2];
 }
 
 void main() {
@@ -12,6 +15,9 @@ void main() {
   int? num1 = int.parse(stdin.readLineSync()!);
   print("Enter num2: ");
   int? num2 = int.parse(stdin.readLineSync()!);
-  Swap(num1, num2);
-  print("$num1 , $num2");
+  print("First : $num1, $num2");
+
+  List arr = Swap(num1, num2);
+
+  print("Last : ${arr[0]}, ${arr[1]}");
 }
